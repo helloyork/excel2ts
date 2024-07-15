@@ -1,0 +1,21 @@
+{
+  "name": "excel2ts",
+  "version": "0.1.0",
+  "description": "excel to typescript",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "tsc"
+  },
+  "author": "helloyork@icloud.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "papaparse": "^5.4.1",
+    "ts-morph": "^23.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/papaparse": "^5.3.14"
+  }
+}
