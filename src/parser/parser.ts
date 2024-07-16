@@ -17,11 +17,11 @@ interface IParser {
 }
 
 const Parsers = {
-    CSV: "./csv.ts",
+    CSV: "./csv.js",
 }
 
 async function loadParser(type: string): Promise<IParser> {
-    const parserModule = (await import(path.resolve(__dirname, (Parsers as Record<string, string>)[type])));
+    const parserModule = (await import(path.resolve(__dirname, type)));
     const parser = parserModule.default as IParser;
     return parser;
 }
