@@ -12,6 +12,12 @@ This is a simple tool to convert Excel files to TypeScript Types.
 npm install -g excel2ts
 ```
 
+## Example
+
+```bash
+excel2ts convert -i "./test" -d "./test/dts" -t "./test/typ" --key "id"
+```
+
 ## Usage
 
 ```bash
@@ -34,12 +40,36 @@ string2,2,FALSE
 
 > Note: The first row is the key of the type, the second row is the type of the key, and the rest of the rows are the values of the key.
 
+so the dts file will look like this:
 
-## Example
-
-```bash
-node ./dist/index.js convert -i "./test" -d "./test/dts" -t "./test/typ" --key "id"
+```typescript
+export interface test1 {
+    key2: number;
+    key3: boolean;
+}
 ```
+
+*key1 is missing because it is the primary key*
+
+and the typ file will look like this:
+
+```typescript
+export class test1 {
+    static readonly data = [
+            {
+                "key1": "string1",
+                "key2": 1,
+                "key3": true
+            },
+            {
+                "key1": "string2",
+                "key2": 2,
+                "key3": false
+            }
+        ];
+}
+```
+
 
 ## License
 

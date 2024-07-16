@@ -1,5 +1,4 @@
-id,data2,data3
-number,string,boolean
-13,24,false
-34,56,true
-78,90,0
+key1,key2,key3
+string,number,boolean
+string1,1,true
+string2,2,FALSE
